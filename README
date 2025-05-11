@@ -1,0 +1,5 @@
+Setup de Workshop de LaTeX para Linux
+
+``
+sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-science texlive-latex-extra texlive-extra-utils latexmk texlive-publishers texlive-science texlive-lang-spanish
+``
