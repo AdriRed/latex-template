@@ -83,8 +83,8 @@
         }
     ],
     "files.exclude": {
-        "*.aux": true,
-        "*.log": true,
-        "*.synctex.gz": true
+        "**/*.aux": true,
+        "**/*.log": true,
+        "**/*.synctex.gz": true
     }
 }
