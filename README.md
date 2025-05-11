@@ -1,6 +1,6 @@
-# Template de Latex
+# Template de Latex con Visual Studio Code
 
-Setup de Workshop de LaTeX para Linux
+Setup de LaTeX Workshop para Linux
 
 ```sh
 sudo apt-get install texlive-xetex texlive-fonts-recommended \
