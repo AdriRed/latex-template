@@ -6,7 +6,7 @@ Setup de LaTeX Workshop para Linux
 sudo apt-get install texlive-xetex texlive-fonts-recommended \
     texlive-plain-generic texlive-science texlive-latex-extra \
     texlive-extra-utils latexmk texlive-publishers texlive-science \
-    texlive-lang-spanish
+    texlive-lang-spanish texlive-bibtex-extra biber
 ```
 
 Solo abriendo un archivo .tex y dandole al play (arriba a la derecha) compilará un archivo .pdf. Si quieres ver los cambios en directo, presiona el botón de la lupa (al lado del play)
