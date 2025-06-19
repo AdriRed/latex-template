@@ -2,6 +2,7 @@
 *.log
 *.synctex.gz
 *.synctex
+*(busy)
 *.pdf
 *.bbl
 *.bcf
