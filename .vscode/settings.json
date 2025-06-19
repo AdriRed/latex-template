@@ -86,5 +86,5 @@
         "**/*.aux": true,
         "**/*.log": true,
         "**/*.synctex.gz": true
-    }
+    },
 }

@@ -1,0 +1,154 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{supertabular} % Alternativa a supertabular
+\usepackage[compact]{titlesec}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{enumitem} % Paquete recomendado para mejor control
+
+\definecolor{weak}{RGB}{255,153,102}
+\definecolor{em}{RGB}{102,178,255}
+\definecolor{strong}{RGB}{153,255,153}
+\definecolor{grav}{RGB}{255,204,255}
+
+\geometry{margin=0.7cm}
+\AtBeginEnvironment{supertabular}{\small}
+
+\begin{document}
+
+
+\subsection*{Reglas de Identificación}
+
+\begin{supertabular}{|l|l|}
+\hline
+\rowcolor{gray!20} 
+\textbf{Indicador} & \textbf{Interacción} \\
+\hline
+Cambio de sabor (quark) & \cellcolor{weak}Débil \\
+Neutrinos involucrados & \cellcolor{weak}Débil \\
+Decaimiento $\beta$ (e.g. $n \to p e^- \bar{\nu}_e$) & \cellcolor{weak}Débil \\
+Emisión/absorción de fotones & \cellcolor{em}Electromagnética \\
+Interacción con carga eléctrica & \cellcolor{em}Electromagnética \\
+Producción de hadrones & \cellcolor{strong}Fuerte \\
+Confinamiento de quarks & \cellcolor{strong}Fuerte \\
+\hline
+\end{supertabular}
+
+\subsection*{Chequeo Rápido}
+
+Para cualquier proceso, pregúntate:
+\begin{enumerate}
+\item ¿Hay cambio de sabor? $\Rightarrow$ Débil
+\item ¿Hay hadrones en estado final/inicial? $\Rightarrow$ Fuerte
+\item ¿Hay partículas cargadas sin cambio de sabor o fotones? $\Rightarrow$ EM
+\end{enumerate}
+
+\section*{Nomenclatura}
+
+\subsection*{Símbolos y propiedades}
+\begin{itemize}
+\item $B$: Número bariónico
+\item $L$: Número leptónico
+\item $Q$: Carga eléctrica
+\item $I$: Isospín
+\item $I_3$: Tercera componente del isospín
+\item $J^P$: Espín y paridad
+\item $S$: Extrañeza
+\item $C$: Conjugación de carga
+\end{itemize}
+
+\subsection*{Antipartículas}
+\begin{itemize}
+  \item Masa igual, carga opuesta
+  \item $B$, $L$, $I_3$, $S$ cambian de signo
+  \item Antileptones: $L = -1$
+  \item Antibariones: $B = -1$
+\end{itemize}
+
+\subsection*{Conjugación de carga ($C$)}
+\begin{itemize}
+  \item Solo para partículas neutras
+  \item Mesones neutros: $C = (-1)^{L+S}$
+  \item $\gamma$, $g$: $C = -1$
+  \item $W^\pm$ no son autoestados de $C$
+\end{itemize}
+\newpage
+\section*{Leptones}
+$B = 0$, $L = 1$, $I = 0$, $I_3 = 0$, $J^P = \frac{1}{2}^+$
+
+\begin{supertabular}{|c|c|c|c|c|c|}
+\hline
+ & $m$ (MeV) & $Q$ & Familia & Quarks \\
+\hline
+$e^-$ & 0.511 & $-1$ & $L_e$ & - \\
+$\mu^-$ & 105.7 & $-1$ & $L_\mu$ & - \\
+$\tau^-$ & 1776.9 & $-1$ & $L_\tau$ & - \\
+$\nu_e$ & $<2.2 \times 10^{-6}$ & $0$ & $L_e$ & - \\
+$\nu_\mu$ & $<0.17$ & $0$ & $L_\mu$ & - \\
+$\nu_\tau$ & $<18.2$ & $0$ & $L_\tau$ & - \\
+\hline
+\end{supertabular}
+
+\section*{Mesones}
+$B = 0$, $L = 0$
+
+\begin{supertabular}{|c|c|c|c|c|c|c|c|}
+\hline
+ & $m$ (MeV) & $m^*$ (MeV) & $Q$ & $I$ & $J^P$ & $S$ & Quarks \\
+\hline
+$\pi^\pm$ & 139.6 & - & $\pm1$ & 1 & $0^-$ & - & $u\bar{d}$, $d\bar{u}$ \\
+$\pi^0$ & 135.0 & - & $0$ & 1 & $0^-$ & - & $\frac{u\bar{u}-d\bar{d}}{\sqrt{2}}$ \\
+$K^+$ & 493.7 & - & $+1$ & $\frac{1}{2}$ & $0^-$ & $+1$ & $u\bar{s}$ \\
+$K^-$ & 493.7 & - & $-1$ & $\frac{1}{2}$ & $0^-$ & $-1$ & $s\bar{u}$ \\
+$K^0$ & 497.6 & - & $0$ & $\frac{1}{2}$ & $0^-$ & $+1$ & $d\bar{s}$ \\
+$\bar{K}^0$ & 497.6 & - & $0$ & $\frac{1}{2}$ & $0^-$ & $-1$ & $s\bar{d}$ \\
+$\eta$ & 547.9 & - & $0$ & 0 & $0^-$ & - & $u\bar{u}$/$d\bar{d}$/$s\bar{s}$ \\
+$\rho^+$ & 775.3 & - & $+1$ & 1 & $1^-$ & - & $u\bar{d}$ \\
+$\phi$ & 1019 & - & $0$ & 0 & $1^-$ & - & $s\bar{s}$ \\
+\hline
+\end{supertabular}
+
+
+\section*{Bariones}
+$B = +1$, $L = 0$
+
+\begin{supertabular}{|c|c|c|c|c|c|c|}
+\hline
+ & $m$ (MeV) & $Q$ & $I$ & $J^P$ & $S$ & Quarks \\
+\hline
+$p$ & 938.3 & $+1$ & $\frac{1}{2}$ & $\frac{1}{2}^+$ & 0 & $uud$ \\
+$n$ & 939.6 & $0$ & $\frac{1}{2}$ & $\frac{1}{2}^+$ & 0 & $udd$ \\
+$\Lambda^0$ & 1115.7 & $0$ & 0 & $\frac{1}{2}^+$ & $-1$ & $uds$ \\
+$\Sigma^+$ & 1189.4 & $+1$ & 1 & $\frac{1}{2}^+$ & $-1$ & $uus$ \\
+$\Sigma^0$ & 1192.6 & $0$ & 1 & $\frac{1}{2}^+$ & $-1$ & $uds$ \\
+$\Sigma^-$ & 1197.4 & $-1$ & 1 & $\frac{1}{2}^+$ & $-1$ & $dds$ \\
+$\Xi^0$ & 1314.9 & $0$ & $\frac{1}{2}$ & $\frac{1}{2}^+$ & $-2$ & $uss$ \\
+$\Xi^-$ & 1321.7 & $-1$ & $\frac{1}{2}$ & $\frac{1}{2}^+$ & $-2$ & $dss$ \\
+$\Omega^-$ & 1672.4 & $-1$ & 0 & $\frac{3}{2}^+$ & $-3$ & $sss$ \\
+$\Delta^{++}$ & 1232 & $+2$ & $\frac{3}{2}$ & $\frac{3}{2}^+$ & 0 & $uuu$ \\
+$\Delta^+$ & 1232 & $+1$ & $\frac{3}{2}$ & $\frac{3}{2}^+$ & 0 & $uud$ \\
+$\Delta^0$ & 1232 & $0$ & $\frac{3}{2}$ & $\frac{3}{2}^+$ & 0 & $udd$ \\
+$\Delta^-$ & 1232 & $-1$ & $\frac{3}{2}$ & $\frac{3}{2}^+$ & 0 & $ddd$ \\
+\hline
+\end{supertabular}
+
+\section*{Bosones}
+$B = 0$, $L = 0$
+
+\begin{supertabular}{|c|c|c|c|c|c|c|}
+\hline
+ & $m$ (GeV) & $Q$ & $J^P$ & $C$ & Tipo & Quarks \\
+\hline
+$\gamma$ & 0 & 0 & $1^-$ & $-1$ & EM & - \\
+$g$ & 0 & 0 & $1^-$ & $-1$ & Fuerte & - \\
+$Z^0$ & 91.2 & 0 & $1^-$ & - & Débil & - \\
+$W^\pm$ & 80.4 & $\pm1$ & $1^-$ & - & Débil & - \\
+$H^0$ & 125.1 & 0 & $0^+$ & $+1$ & Escalar & - \\
+\hline
+\end{supertabular}
+
+\end{document}
