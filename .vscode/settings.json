@@ -93,7 +93,13 @@
     "files.exclude": {
         "**/*.aux": true,
         "**/*.log": true,
-        "**/*.synctex.gz": true
+        "**/*.synctex.gz": true,
+        "**/*.synctex": true,
+        "**/*.bbl": true,
+        "**/*.bcf": true,
+        "**/*.out": true,
+        "**/*.run.xml": true,
+        "**/*.synctex(busy)": true,
     },
     "ltex.java.path": "/usr"
 }
