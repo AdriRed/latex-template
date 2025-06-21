@@ -38,3 +38,47 @@
 
 % Fuente y estilo general
 \renewcommand{\familydefault}{\rmdefault}
+
+%Definició de la ela geminada per tal que accepti el punt volat del teclat
+% \def·#1{%
+%   \ifmmode
+%     \cdot #1
+%     %\csname normal@char\string"\endcsname l%
+%   \else%
+%     \def\argument{#1}%
+%     \if\argument l%
+%       \leftllkern=0pt\rightllkern=0pt\raiselldim=0pt%
+%       \setbox0\hbox{l}\setbox1\hbox{l\/}\setbox2\hbox{.}%
+%       \advance\raiselldim by \the\fontdimen5\the\font
+%       \advance\raiselldim by -\ht2%
+%       \leftllkern=-.25\wd0%
+%       \advance\leftllkern by \wd1%
+%       \advance\leftllkern by -\wd0%
+%       \rightllkern=-.25\wd0%
+%       \advance\rightllkern by -\wd1%
+%       \advance\rightllkern by \wd0%
+%       \allowhyphens\discretionary{-}{l}%
+%       {\hbox{}\kern\leftllkern\raise\raiselldim\hbox{.}%
+%         \kern\rightllkern\hbox{l}}\allowhyphens%
+%     \else
+%       \if\argument L%
+%         \leftllkern=0pt\rightllkern=0pt\raiselldim=0pt%
+%         \setbox0\hbox{L}\setbox1\hbox{L\/}\setbox2\hbox{.}%
+%         \advance\raiselldim by .5\ht0%
+%         \advance\raiselldim by -.5\ht2%
+%         \leftllkern=-.125\wd0%
+%         \advance\leftllkern by \wd1%
+%         \advance\leftllkern by -\wd0%
+%         \rightllkern=-\wd0%
+%         \divide\rightllkern by 6%
+%         \advance\rightllkern by -\wd1%
+%         \advance\rightllkern by \wd0%
+%         \allowhyphens\discretionary{-}{L}%
+%         {\hbox{}\kern\leftllkern\raise\raiselldim\hbox{.}%
+%            \kern\rightllkern\hbox{L}}\allowhyphens%
+%       \else
+%         #1
+%       \fi
+%     \fi
+%   \fi
+%   }

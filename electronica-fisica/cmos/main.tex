@@ -20,22 +20,24 @@
 \section{Introducció}
 % Introducir brevemente qué es CMOS, su importancia en la electrónica digital y qué estructura tendrá el trabajo.
 
-Un semiconductor-òxid-metall complementari (\textit{Complementary-Metal-Oxide Semiconductor}) és un tipus de tecnologia que combina un parell simètric de N-MOS i P-MOS conectats de forma complementària per poder fer operacions lògiques de forma eficient \autocite{wiki:CMOS}. 
+Un semiconductor-òxid-metall complementari (\textit{Complementary-Metal-Oxide Semiconductor}) o CMOS, és un tipus de tecnologia que combina un parell simètric de NMOS i PMOS connectats de forma complementària per poder fer operacions lògiques de forma eficient\autocite{wiki:CMOS}. 
 
 Aquesta tecnologia és la base d'electrònica moderna, sent el bloc principal de la porta lògica \texttt{NAND}, que és la base de tots els altres circuits existents i pot arribar formar circuits molt complexos com processadors i memòries RAM.
 
 Els dispositius dissenyats amb el procés CMOS en ment també poden ser utilitzats com a sensor d'imatge, gràcies a la seva eficiència i rapidesa, formant part d'una àmplia varietat d'eines electròniques, des de telèfons mòbils a drons i càmeres fotogràfiques utilitzades en medicina o astronomia. 
 
-Actualment s'estima que el nombre de transistors MOSFET manufacturats (inclou els CMOS) superen els $10^{22}$ dispositius\autocite{wiki:Transistor_count} al 2018, dada que està basada en la Llei de Moore.
-
-A continuació, parlarem sobre la història de la tecnologia CMOS, els principis físics, el seu funcionament intern i les seves aplicacions actuals i futures.
+Actualment s'estima que el nombre de transistors MOSFET manufacturats (inclou els CMOS) superen els $10^{22}$ dispositius \autocite{wiki:Transistor_count} al 2018, dada que està basada en la Llei de Moore.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{images/moore.png}
-    \caption{Gràfic de quantitat de transistors MOS per any. Wikipedia.}
+    \caption{Llei de Moore. Gràfic de quantitat de transistors MOS per any. Wikipedia.}
     \label{<label>}
 \end{figure}
+
+A continuació, parlarem sobre la història de la tecnologia CMOS, els principis físics, el seu funcionament intern i les seves aplicacions actuals i futures.
+
+
 
 \section{Història del CMOS}
 % Destacar los hitos importantes desde 1963, comparaciones con tecnologías anteriores (NMOS, BJT).
@@ -43,37 +45,43 @@ A continuació, parlarem sobre la història de la tecnologia CMOS, els principis
 
 \subsection{BJT i MOSFET}
 
-Al final dels anys 1940, el transistor BJT va ser inventat per John Bardeen i Walter Brattain sota la direcció de William Shockley als laboratoris Bell Telephone. Gràcies a certes millores introduïdes de cara a l'eficiència, tant en el seu ús com a la seva producció, van ser introduïts al públic general als principis dels anys 1950 i van ser la tecnologia predominant al mercat durant trenta anys.
-
-Prèviament, el transistor d'efecte de camp semiconductor-òxid-metall, o MOSFET, ja s'havia inventat i patentat a Europa. Aquest va ser objecte d'estudi per part de l'equip dels laboratoris Bell, però sense èxit, a causa dels problemes dels estats superficials \footnote{Els estats superficials són els estats electrònics que es formen a la superfície dels materials, deguts a la interrupció de la malla atòmica del material que acaba en la superfície. Aquest efecte es pot interrompre amb la \textit{passivització} de la superfície, que redueix l'efecte i estabilitza els estats electrònics al límit del material.} no va ser possible la seva adopció a gran escala.
-
-Després de avenços amb el transistor (òxid de Silici com a passivitzador, invenció de la tecnología de fabricació planar), finalment Mohamed Atalla i Dawon Kahng van introduir el primer transistor MOS de silici funcional als laboratoris Bell l'any 1960. 
-
-\begin{wrapfigure}{r}{0.3\paperwidth}
+\begin{wrapfigure}{r}{0.25\paperwidth}
     \centering
     \includegraphics[width=\linewidth]{images/patent kahang.jpg}
-    \caption{Patent estatunidenca del MOSFET de Dawon Kahng.}
+    \caption{Patent \texttt{US3102230A} estatunidenca del MOSFET de Dawon Kahng.}
 \end{wrapfigure}
+Al final dels anys 1940, el transistor bipolar de junció, o BJT, va ser inventat per John Bardeen i Walter Brattain sota la direcció de William Shockley als laboratoris Bell Telephone. Gràcies a certes millores introduïdes de cara a l'eficiència, tant en el seu ús com a la seva producció, van ser introduïts al públic general als principis dels anys 1950 i van ser la tecnologia predominant al mercat durant trenta anys.
 
-Tot i això, els transistors MOSFET no estaven a l'altura dels BJT de l'època i es vèien com inferiors. La principal diferència entre els MOSFET i BJT és el consum elèctric i el seu ús tipic: 
+
+Prèviament, el transistor d'efecte de camp semiconductor-òxid-metall, o MOSFET, ja s'havia inventat i patentat a Europa. Aquest va ser objecte d'estudi per part de l'equip dels laboratoris Bell, però sense èxit, a causa dels problemes dels estats superficials \footnote{Els estats superficials són els estats electrònics que es formen a la superfície dels materials, deguts a la interrupció de la malla atòmica del material que acaba en la superfície. Aquest efecte es pot pal$\cdot$liar amb la \textit{passivització} de la superfície, que redueix l'efecte i estabilitza els estats electrònics al límit del material.} no va ser possible la seva adopció a gran escala.
+
+Després d'avenços amb el transistor (òxid de Silici com a passivitzador, invenció de la tecnologia de fabricació planar), finalment Mohamed Atalla i Dawon Kahng van introduir el primer transistor MOS de silici funcional als laboratoris Bell l'any 1960. 
+
+Tot i això, els transistors MOSFET no estaven a l'altura dels BJT de l'època i eren vistos com a inferiors. 
+
+La principal diferència entre els MOSFET i BJT és el consum elèctric i el seu ús típic: 
 \begin{itemize}
-    \item Els BJT son controlats directament amb corrent (Base) i aquesta controla el corrent entre el co$\cdot$ector i la font de manera lineal, fent-los ideals per a circuits analògics.
-    \item Els MOSFET només consumeixen electricitat quan volen canviar l'estat, fet que els fa idonis pels circuits digitals.
+    \item Els BJT són controlats per corrent a la base, i aquest corrent controla el flux entre el col·lector i l'emissor. Tenen un comportament lineal i són ideals per a circuits analògics. Requereixen un flux de corrent constant per funcionar.
+    \item Els MOSFET, quan s'utilitzen en configuració CMOS, només consumeixen energia durant els canvis d'estat (commutació), cosa que els fa especialment adequats per a circuits digitals. Fora de CMOS, generalment PMOS i NMOS per separat, els MOSFET també poden consumir energia de forma contínua segons com estiguin polaritzats.
 \end{itemize}
 
+\begin{wrapfigure}{r}{0.2\paperwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/rca cd4000 chip.png}
+    \caption{Chip de la familia CD4000 de RCA.}
+\end{wrapfigure}
+El primer circuit integrat amb tecnologia MOSFET (únicament PMOS) va ser presentat al 1964 per General Microelectronics i el primer aparell d'us quotidià (una calculadora) amb aquests circuits va ser presentada per la mateixa empresa un any després\autocite{general_microelectronics}.
 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nulla lectus, varius sed consequat in, blandit vel ligula. Quisque in ultrices urna. Sed dictum et nisi a rutrum. Integer ullamcorper facilisis odio non luctus. Sed euismod ipsum massa, at tincidunt purus molestie vel. Aenean quis tempus ligula. Quisque fringilla nisi vitae mollis facilisis. Vivamus finibus viverra aliquam. Phasellus semper consectetur efficitur. Etiam faucibus eleifend est, semper lacinia justo laoreet nec. Aenean tincidunt lacinia fermentum.
-
-Proin sed neque in diam pellentesque pellentesque. Integer vestibulum risus vitae rutrum tincidunt. Sed ornare quam vitae erat feugiat finibus. Donec at pharetra turpis. Nulla convallis sapien in elit gravida vehicula. Maecenas nisi erat, maximus sed ullamcorper vitae, pellentesque id magna. Ut nec feugiat sapien. Donec mattis finibus orci eu sodales. Nam scelerisque suscipit ipsum, sit amet condimentum elit pretium sed.
-
-Sed dictum, erat quis elementum ornare, sem nisi facilisis dui, a mattis dui nulla a ante. Nullam vitae fringilla velit. Quisque molestie arcu eu risus rhoncus, nec imperdiet mauris commodo. Aenean mollis, ex in ullamcorper consequat, tellus lectus semper dui, sit amet gravida lorem urna at quam. Phasellus lobortis leo a nunc aliquam, in gravida mi molestie. Proin at auctor turpis. Nam dictum ex felis, eu pharetra erat suscipit at. Vestibulum in varius dui. Fusce vel neque ac dui aliquet commodo ut non mi. Aliquam id luctus dui, et porta turpis. Cras ullamcorper neque vitae consequat lacinia. Sed commodo dapibus dolor nec tempor. Praesent porta aliquam nulla, vel hendrerit velit congue sit amet. Duis et lacus dui. Fusce bibendum elit nec sem pharetra, sit amet cursus orci convallis. Nullam imperdiet est vel est placerat ultricies.
-
-Praesent lacus dui, egestas at magna a, vestibulum placerat urna. Duis commodo elit tortor, sit amet convallis ex elementum ut. Quisque egestas convallis convallis. Phasellus ac odio eu ex posuere porta a eu nibh. Aliquam bibendum nulla nec lacinia euismod. Integer eu justo eu nunc eleifend iaculis et at lorem. Curabitur luctus lacus est, non euismod nunc condimentum vitae. Morbi ante sapien, rutrum eget sollicitudin ut, congue ut neque. In hac habitasse platea dictumst. Vestibulum arcu sem, aliquam eu ex ut, lobortis dictum justo. Cras tempor blandit eros, vel mollis odio ultricies eget. In interdum risus non tempor accumsan. Aliquam quis imperdiet justo.
-
-Cras arcu ex, feugiat sed convallis eu, porttitor sit amet orci. Curabitur arcu risus, interdum sed dolor non, elementum iaculis neque. Etiam et laoreet sapien. Praesent a ligula blandit, vulputate sem quis, ornare odio. Morbi malesuada at augue at fermentum. Donec a volutpat est. Cras turpis turpis, tristique porta eleifend a, feugiat efficitur velit. Nunc tincidunt lorem vel auctor vehicula. Proin convallis urna vel dui egestas mollis. Proin a tellus id leo commodo luctus vel non ipsum. Fusce sed consectetur dolor. 
 
 \subsection{Naixement del CMOS, primers dispositius}
+
+
+El concepte del CMOS neix de reduir el consum energètic dels NMOS i PMOS utilitzats de forma singular i no en conjunt. 
+
+Aquesta tecnologia es presenta al 1960 per la companyia Fairchild Semiconductor però la seva primera comercialització es va prorrogar fins al 1968 amb la presentació del chip CD4000 per RCA\autocite{wiki:4000-series_integrated_circuits}.
+
+
+
 
 \subsection{Actualitat}
 

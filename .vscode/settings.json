@@ -54,15 +54,15 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "pdfLaTeX",
-            "tools": [
-                "pdflatex"
-            ]
-        },
-        {
             "name": "latexmk 🔃",
             "tools": [
                 "latexmk"
+            ]
+        },
+        {
+            "name": "pdfLaTeX",
+            "tools": [
+                "pdflatex"
             ]
         },
         {
@@ -96,6 +96,9 @@
         "**/*.synctex.gz": true,
         "**/*.synctex": true,
         "**/*.bbl": true,
+        "**/*.blg": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fls": true,
         "**/*.bcf": true,
         "**/*.out": true,
         "**/*.run.xml": true,
